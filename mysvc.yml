@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: mysvc
   labels:
-    app: myapp
+    app: myapp  
 spec:
- type: NodePort
- ports:
-  - port: 8080
-    nodePort: 30001
-    protocol: TCP
-selector:
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      nodePort: 30001
+  selector:
     app: myapp
-
