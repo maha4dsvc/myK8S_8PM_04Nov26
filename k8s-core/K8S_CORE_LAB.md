@@ -83,6 +83,12 @@ kubectl rollout restart deploy/booking -n k8s-lab                        # new p
 
 **3a. Install an Ingress controller (Traefik) with Helm:**
 
+```
+kubectl apply -f 00-namespace.yaml
+kubectl apply -f 01-config/booking.yaml                                # …then the app that reads them
+kubectl get configmap,secret,deploy,svc,pods -n k8s-lab
+```
+
 ```bash
 helm repo add traefik https://traefik.github.io/charts
 helm repo update
